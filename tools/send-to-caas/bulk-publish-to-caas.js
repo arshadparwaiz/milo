@@ -13,7 +13,7 @@ import {
   postDataToCaaS,
   getConfig,
   setConfig,
-} from './send-utils.js';
+} from '../../libs/tools/send-to-caas/send-utils.js';
 import comEnterpriseToCaasTagMap from './comEnterpriseToCaasTagMap.js';
 
 const LS_KEY = 'bulk-publish-caas';

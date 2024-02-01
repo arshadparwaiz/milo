@@ -14,7 +14,7 @@ const sendToCaaS = async (_, sk, options) => {
 
   if (!document.getElementById(SCRIPT_ID)) {
     const script = document.createElement('script');
-    script.src = 'https://milo.adobe.com/tools/send-to-caas/send-to-caas.js';
+    script.src = './send-to-caas.js';
     script.id = SCRIPT_ID;
     script.type = 'module';
     script.onload = () => dispatchEvent();
