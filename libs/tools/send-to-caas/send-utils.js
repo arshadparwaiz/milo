@@ -1,7 +1,6 @@
-import getUuid from '../../libs/utils/getUuid.js';
-import { getMetadata } from '../../libs/utils/utils.js';
-import { LOCALES } from '../../libs/blocks/caas/utils.js';
-import { isImsStage } from '../utils/utils.js';
+import getUuid from '../../utils/getUuid.js';
+import { getMetadata } from '../../utils/utils.js';
+import { LOCALES } from '../../blocks/caas/utils.js';
 
 const CAAS_TAG_URL = 'https://www.adobe.com/chimera-api/tags';
 const HLX_ADMIN_STATUS = 'https://admin.hlx.page/status';
@@ -124,7 +123,7 @@ const [getCaasTags, loadCaasTags] = (() => {
       } catch (e) {
         // ignore
       }
-      const { default: caasTags } = await import('../../libs/blocks/caas-config/caas-tags.js');
+      const { default: caasTags } = await import('../../blocks/caas-config/caas-tags.js');
       tags = caasTags.namespaces.caas.tags;
     }];
 })();
@@ -294,7 +293,7 @@ const getBulkPublishLangAttr = async (options) => {
   if (!getLocale) {
     // This is only imported from the bulk publisher so there is no dependency cycle
     // eslint-disable-next-line import/no-cycle
-    const { getLocale: utilsGetLocale } = await import('../../libs/utils/utils.js');
+    const { getLocale: utilsGetLocale } = await import('../../utils/utils.js');
     getLocale = utilsGetLocale;
     setConfig({ getLocale });
   }
